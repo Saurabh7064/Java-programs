@@ -1,6 +1,7 @@
 package javaprogramsbook;
 
 import java.util.*;
+import java.awt.Color;
 
 public class Demo {
 //    public static List<Integer> evenIntegers(List<Integer> integers) {
@@ -82,7 +83,7 @@ public class Demo {
         System.out.println("Sum of integers: " + sumIntegers(integers));
         System.out.println("List contains nulls: " + integersContainsNulls(integers));
 
-        Car car = new Car("BMW", null);
+        Car car = new Car("BMW", Color.BLUE);
 
         Map.of("key1", "value1", "key2", "value2");
         List.of("a", "b", "c");
