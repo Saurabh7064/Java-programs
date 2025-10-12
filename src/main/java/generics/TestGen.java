@@ -1,26 +1,60 @@
 package generics;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
 //Learning Generics
-@Data
-@AllArgsConstructor
 class Employee{
     private int empId;
     private String empName;
+
+    public Employee(int empId, String empName) {
+        this.empId = empId;
+        this.empName = empName;
+    }
+
+    public int getEmpId() {
+        return empId;
+    }
+
+    public String getEmpName() {
+        return empName;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "empId=" + empId +
+                ", empName='" + empName + '\'' +
+                '}';
+    }
 }
 
-@Data
-@AllArgsConstructor
 class Student{
     private int stId;
     private String stName;
 
+    public Student(int stId, String stName) {
+        this.stId = stId;
+        this.stName = stName;
+    }
+
+    public int getStId() {
+        return stId;
+    }
+
+    public String getStName() {
+        return stName;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "stId=" + stId +
+                ", stName='" + stName + '\'' +
+                '}';
+    }
 }
 
 class MyGen<T>{
@@ -47,15 +81,15 @@ class MyGenList<T>  {
 
     public  <E> void printArray(List<E> elements) {
 
-        elements.stream().forEach(element -> System.out.println(element));
+        elements.forEach(System.out::println);
      }
 
-    public <pacoo2> void printArray2(List<pacoo2> elements) {
-        elements.stream().forEach(element -> System.out.println(element));
+    public <E2> void printArray2(List<E2> elements) {
+        elements.forEach(System.out::println);
     }
 
-    public <String> void printArray3(List<String> elements) {
-        elements.stream().forEach(element -> System.out.println(element));
+    public <S> void printArray3(List<S> elements) {
+        elements.forEach(System.out::println);
     }
 
     //Here String a just a keyword like foo bar not the actual String class
@@ -245,7 +279,7 @@ public class TestGen {
         myGenList.addToList(student4);
         myGenList.addToList(student5);
 
-        myGenList.getList().stream().forEach(System.out::println);
+        myGenList.getList().forEach(System.out::println);
 
         //BOX class
         Box<String> box = new Box<>("Hello, World");
@@ -253,9 +287,9 @@ public class TestGen {
         System.out.println(box.getContents());
 
         //Pair Class
-        Pair pair = new Pair("John Doe", 25);
-        Pair pair2 = new Pair(10,20);
-        Pair pair3 = new Pair("Saurabh","Kumar");
+        Pair<String, Integer> pair = new Pair<>("John Doe", 25);
+        Pair<Integer, Integer> pair2 = new Pair<>(10,20);
+        Pair<String, String> pair3 = new Pair<>("Saurabh","Kumar");
 
         System.out.println(pair.getFirst());
         System.out.println(pair.getSecond());

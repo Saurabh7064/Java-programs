@@ -9,18 +9,17 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
+        <!-- Use LTS Java release; works with Stream#toList and keeps compatibility -->
+        <maven.compiler.release>17</maven.compiler.release>
+        <!-- Keep source/target for IDEs that still read them -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
     </properties>
 
     <dependencies>
-        <!-- Lombok dependency -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.28</version> <!-- Update the version as needed -->
-            <scope>provided</scope>
-        </dependency>
+        <!-- No external deps currently -->
     </dependencies>
 
     <build>
@@ -28,15 +27,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version> <!-- Ensure your Maven compiler plugin version is compatible -->
+                <version>${maven.compiler.plugin.version}</version>
                 <configuration>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                            <version>1.18.28</version> <!-- Match Lombok version -->
-                        </path>
-                    </annotationProcessorPaths>
+                    <release>${maven.compiler.release}</release>
                 </configuration>
             </plugin>
         </plugins>
