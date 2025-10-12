@@ -1,0 +1,29 @@
+# IDEs
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# Build outputs
+/target/
+/out/
+/bin/
+/build/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Generated test artifacts
+/test/generated/
+
