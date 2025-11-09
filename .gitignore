@@ -16,7 +16,6 @@
 /bin/
 /build/
 .gradle/
-
 # OS junk
 .DS_Store
 Thumbs.db
@@ -27,3 +26,4 @@ logs/
 
 # Generated test artifacts
 /test/generated/
+

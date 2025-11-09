@@ -1,4 +1,4 @@
-package javaprogramsbook;
+package javaprogramsbook.chapter2;
 
 import java.util.*;
 import java.awt.Color;

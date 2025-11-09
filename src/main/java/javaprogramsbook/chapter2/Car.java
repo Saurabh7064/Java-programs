@@ -1,7 +1,6 @@
-package javaprogramsbook;
+package javaprogramsbook.chapter2;
 
 import java.awt.*;
-import java.util.Objects;
 
 public class Car {
     private final String name;
